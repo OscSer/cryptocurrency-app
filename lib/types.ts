@@ -16,3 +16,16 @@ export interface Coin {
   tsupply: number
   msupply: number
 }
+
+export interface CoinsResponse {
+  data: Coin[]
+  info: {
+    coins_num: number
+    time: number
+  }
+}
+
+export type CoinsData = {
+  coins: Coin[]
+  total: number
+}

@@ -1,4 +1,4 @@
-import { Coin } from '@/lib/types'
+import { CoinsResponse, CoinsData, Coin } from '@/lib/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const coinSlice = createApi({
@@ -10,16 +10,18 @@ export const coinSlice = createApi({
   }),
 
   endpoints: (builder) => ({
-    getCoins: builder.query<Coin[], { start: number; limit: number }>({
+    coins: builder.query<CoinsData, { start: number; limit: number }>({
       query: ({ start, limit }) => `tickers/?start=${start}&limit=${limit}`,
-      transformResponse: (response: any) => response.data,
+      transformResponse: (response: CoinsResponse) => ({
+        coins: response.data,
+        total: response.info.coins_num,
+      }),
     }),
-
-    getCoinById: builder.query<Coin, { id: string }>({
+    coinById: builder.query<Coin, { id: string }>({
       query: ({ id }) => `ticker/?id=${id}`,
-      transformResponse: (response: any) => response[0],
+      transformResponse: (response: Coin[]) => response[0],
     }),
   }),
 })
 
-export const { useGetCoinsQuery, useGetCoinByIdQuery } = coinSlice
+export const { useCoinsQuery, useCoinByIdQuery } = coinSlice
