@@ -9,8 +9,8 @@
 
 .coinItem:hover {
   cursor: pointer;
-  background-color: #cef6ff;
-  border: 1px solid #a5ecfd;
+  background-color: #ecfcff;
+  border: 1px solid #0682b4;
 }
 
 .coinItem__section {

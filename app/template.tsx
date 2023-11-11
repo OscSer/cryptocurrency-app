@@ -1,9 +1,19 @@
-import React from "react";
+'use client'
 
-interface Props {
-  children: React.ReactNode;
-}
+import React from 'react'
+import { ThemeProvider, createTheme } from '@mui/material'
 
-export default function Template({ children }: Props) {
-  return <main>{children}</main>;
+const theme = createTheme({
+  palette: {
+    primary: { main: '#04a5d6' },
+    secondary: { main: '#0682b4' },
+  },
+})
+
+export default function Template({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider theme={theme}>
+      <main>{children}</main>
+    </ThemeProvider>
+  )
 }
