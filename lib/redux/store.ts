@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { coinSlice } from './features/api/coinSlice'
+import { coinSlice } from './features/coinSlice'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
 export const store = configureStore({
