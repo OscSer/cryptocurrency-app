@@ -2,28 +2,36 @@
 
 import styles from './page.module.css'
 import { useState } from 'react'
-import { useGetCoinsQuery } from '@/redux/features/api/coinSlice'
+import { Pagination } from '@mui/material'
+import { useCoinsQuery } from '@/lib/redux/features/coinSlice'
+import { RESULTS_LIMIT } from '@/lib/constants'
+import CoinList from '@/components/coin-list/coin-list'
+import SearchBar from '@/components/search-bar/search-bar'
+import Loading from '@/components/loading/loading'
+import ErrorMessage from '@/components/error-message/error-message'
 
 export default function Home() {
-  const limit = 50
-  const [start, setStart] = useState(0)
-  const { data, isLoading, isSuccess, error } = useGetCoinsQuery({
-    limit,
-    start,
+  const [page, setPage] = useState(1)
+  const { data, isLoading, isSuccess, error } = useCoinsQuery({
+    start: (page - 1) * RESULTS_LIMIT,
+    limit: RESULTS_LIMIT,
   })
 
-  const onNext = () => setStart((s) => s + limit)
-  const onPrev = () => setStart((s) => s - limit)
+  const onPageChange = (e: any, page: number) => setPage(page)
+  const getPageCount = (total: number) => Math.ceil(total / RESULTS_LIMIT)
 
-  return (
-    <>
-      <button onClick={onPrev} disabled={!start}>
-        prev
-      </button>
-      <button onClick={onNext}>next</button>
-      {data?.map((coin) => (
-        <p key={coin.id}>{coin.name}</p>
-      ))}
-    </>
-  )
+  if (error) return <ErrorMessage />
+  if (isLoading) return <Loading />
+  if (isSuccess)
+    return (
+      <div className={styles.home}>
+        <SearchBar />
+        <CoinList coins={data.coins} />
+        <Pagination
+          page={page}
+          count={getPageCount(data.total)}
+          onChange={onPageChange}
+        />
+      </div>
+    )
 }
