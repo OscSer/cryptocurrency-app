@@ -1,12 +1,17 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { homeSlice } from './features/homeSlice'
+import { coinSlice } from './features/api/coinSlice'
+import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
 export const store = configureStore({
   reducer: {
-    [homeSlice.name]: homeSlice.reducer,
+    [coinSlice.reducerPath]: coinSlice.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({}).concat([coinSlice.middleware]),
   devTools: process.env.NODE_ENV !== 'production',
 })
+
+setupListeners(store.dispatch)
 
 export type AppState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
