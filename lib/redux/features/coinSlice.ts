@@ -3,8 +3,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const coinSlice = createApi({
   reducerPath: 'coinApi',
-  refetchOnFocus: true,
-
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://api.coinlore.net/api/',
   }),
