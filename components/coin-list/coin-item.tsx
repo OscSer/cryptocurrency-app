@@ -1,6 +1,7 @@
 import styles from './coin-item.module.css'
 import { formatCurrency } from '@/lib/helper'
 import { Coin } from '@/lib/types'
+import CoinImage from '../coin-image/coin-image'
 
 interface Props {
   coin: Coin
@@ -12,6 +13,10 @@ export default function CoinItem({ coin, onClick }: Props) {
 
   return (
     <div className={styles.coinItem} onClick={onClick}>
+      <div className={styles.coinItem__section}>
+        <CoinImage symbol={symbol} />
+      </div>
+
       <div className={styles.coinItem__section}>
         <div className={styles.coinItem__section__title}>{name}</div>
         <div className={styles.coinItem__section__desc}>{symbol}</div>
