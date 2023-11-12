@@ -1,0 +1,33 @@
+.coinDetailItem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  width: 150px;
+  padding: 15px;
+  background-color: #cef6ff;
+  border-radius: 5px;
+}
+
+.coinDetailItem__title {
+  font-size: 18px;
+}
+
+.coinDetailItem__value {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  font-size: 16px;
+  color: #636363;
+}
+
+.coinDetailItem__value--positive {
+  color: green;
+}
+
+.coinDetailItem__value--negative {
+  color: red;
+}
