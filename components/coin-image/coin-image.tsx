@@ -2,8 +2,8 @@ import { Avatar } from '@mui/material'
 import { IconFaceIdError } from '@tabler/icons-react'
 
 interface Props {
-  width: number
-  height: number
+  width?: number
+  height?: number
   symbol: string
 }
 
