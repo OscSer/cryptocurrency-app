@@ -32,14 +32,14 @@ export default function CoinItem({ coin, onClick }: Props) {
       <div className={styles.coinItem__section}>
         <div className={styles.coinItem__section__title}>Volume (24h)</div>
         <div className={styles.coinItem__section__desc}>
-          {formatCurrency(volume24)}
+          {formatCurrency(volume24, true)}
         </div>
       </div>
 
       <div className={styles.coinItem__section}>
         <div className={styles.coinItem__section__title}>Market Cap</div>
         <div className={styles.coinItem__section__desc}>
-          {formatCurrency(market_cap_usd)}
+          {formatCurrency(market_cap_usd, true)}
         </div>
       </div>
     </div>
