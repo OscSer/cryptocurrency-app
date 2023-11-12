@@ -1,13 +1,18 @@
 import { Stack } from '@mui/material'
 import CoinItem from './coin-item'
 import { Coin } from '@/lib/types'
+import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/lib/constants'
 
 interface Props {
   coins: Coin[]
-  onClick: (coin: Coin) => void
 }
 
-export default function CoinList({ coins = [], onClick }: Props) {
+export default function CoinList({ coins = [] }: Props) {
+  const router = useRouter()
+
+  const onClick = ({ id }: Coin) => router.push(`${ROUTES.COIN}/${id}`)
+
   return (
     <Stack spacing={1.5}>
       {coins.map((coin) => (
