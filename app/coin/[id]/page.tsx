@@ -29,7 +29,7 @@ export default function CoinPage({ params }: Props) {
   if (isSuccess)
     return (
       <div className={styles.coinPage}>
-        <Button startIcon={<IconArrowBackUp />} onClick={backToHome}>
+        <Button size='large' startIcon={<IconArrowBackUp />} onClick={backToHome}>
           Home
         </Button>
         <CoinDetail coin={data} />

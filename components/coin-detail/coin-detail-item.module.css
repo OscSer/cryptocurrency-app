@@ -1,3 +1,6 @@
+@value colors: "@/components/colors.module.css";
+@value secondary, border, faint, positive, negative from colors;
+
 .coinDetailItem {
   display: flex;
   justify-content: center;
@@ -7,7 +10,8 @@
 
   width: 150px;
   padding: 15px;
-  background-color: #cef6ff;
+  background-color: secondary;
+  border: 1px solid border;
   border-radius: 5px;
 }
 
@@ -21,13 +25,13 @@
   gap: 3px;
 
   font-size: 16px;
-  color: #636363;
+  color: faint;
 }
 
 .coinDetailItem__value--positive {
-  color: green;
+  color: positive;
 }
 
 .coinDetailItem__value--negative {
-  color: red;
+  color: negative;
 }

@@ -1,3 +1,4 @@
+import colors from '@/components/colors.module.css'
 import { Avatar } from '@mui/material'
 import { IconFaceIdError } from '@tabler/icons-react'
 
@@ -14,7 +15,7 @@ export default function CoinImage({ width = 40, height = 40, symbol }: Props) {
       alt={symbol}
       src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`}
     >
-      <IconFaceIdError size={width} color="#5c5c5c" />
+      <IconFaceIdError size={width} color={colors.faint} />
     </Avatar>
   )
 }

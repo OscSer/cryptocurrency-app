@@ -1,3 +1,6 @@
+@value colors: "@/components/colors.module.css";
+@value secondary, primary, border from colors;
+
 .coinItem {
   display: flex;
   flex-direction: row;
@@ -7,11 +10,11 @@
 
   padding: 15px !important;
   border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid border;
 }
 
 .coinItem:hover {
   cursor: pointer;
-  background-color: #ecfcff;
-  border: 1px solid #0682b4;
+  background-color: secondary;
+  border: 1px solid primary;
 }

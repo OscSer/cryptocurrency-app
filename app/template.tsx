@@ -1,12 +1,12 @@
 'use client'
 
+import colors from '@/components/colors.module.css'
 import React from 'react'
 import { ThemeProvider, createTheme } from '@mui/material'
 
 const theme = createTheme({
   palette: {
-    primary: { main: '#0682b4' },
-    secondary: { main: '#0d6991' },
+    primary: { main: colors.primary },
   },
 })
 

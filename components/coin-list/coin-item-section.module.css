@@ -1,3 +1,6 @@
+@value colors: "@/components/colors.module.css";
+@value faint from colors;
+
 .coinItemSection {
   display: flex;
   flex-direction: column;
@@ -17,7 +20,7 @@
 }
 
 .coinItemSection__value {
-  color: #828282;
+  color: faint;
 }
 
 /* Tablet and Smaller Desktop */
