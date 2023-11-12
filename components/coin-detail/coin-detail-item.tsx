@@ -20,7 +20,7 @@ export default function CoinDetailItem({ title, value, type }: Props) {
 
     if (type === 'percent') {
       const className =
-        value > 0
+        value >= 0
           ? styles['coinDetailItem__value--positive']
           : styles['coinDetailItem__value--negative']
 

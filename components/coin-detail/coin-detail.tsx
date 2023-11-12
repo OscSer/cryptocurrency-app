@@ -32,22 +32,27 @@ export default function CoinDetail({ coin }: Props) {
 
       <div className={styles.coinDetail__items}>
         <CoinDetailItem title="Rank" value={rank} type="rank" />
+
         <CoinDetailItem
           title="Market Cap"
           value={market_cap_usd}
           type="price"
         />
+
         <CoinDetailItem title="Volume (24h)" value={volume24} type="price" />
+
         <CoinDetailItem
           title="Change (1h)"
           value={percent_change_1h}
           type="percent"
         />
+
         <CoinDetailItem
           title="Change (24h)"
           value={percent_change_24h}
           type="percent"
         />
+        
         <CoinDetailItem
           title="Change (7d)"
           value={percent_change_7d}

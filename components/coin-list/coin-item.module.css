@@ -15,25 +15,3 @@
   background-color: #ecfcff;
   border: 1px solid #0682b4;
 }
-
-.coinItem__section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 5px;
-
-  font-size: 14px;
-}
-
-.coinItem__section__title {
-  font-size: 16px;
-  width: 150px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.coinItem__section__desc {
-  color: #828282;
-}

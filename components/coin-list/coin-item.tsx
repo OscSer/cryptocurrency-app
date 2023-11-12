@@ -2,6 +2,7 @@ import styles from './coin-item.module.css'
 import { formatCurrency } from '@/lib/helper'
 import { Coin } from '@/lib/types'
 import CoinImage from '../coin-image/coin-image'
+import CoinItemSection from './coin-item-section'
 
 interface Props {
   coin: Coin
@@ -13,35 +14,23 @@ export default function CoinItem({ coin, onClick }: Props) {
 
   return (
     <div className={styles.coinItem} onClick={onClick}>
-      <div className={styles.coinItem__section}>
+      <CoinItemSection>
         <CoinImage symbol={symbol} />
-      </div>
+      </CoinItemSection>
 
-      <div className={styles.coinItem__section}>
-        <div className={styles.coinItem__section__title}>{name}</div>
-        <div className={styles.coinItem__section__desc}>{symbol}</div>
-      </div>
+      <CoinItemSection title={name}>{symbol}</CoinItemSection>
 
-      <div className={styles.coinItem__section}>
-        <div className={styles.coinItem__section__title}>Price (USD)</div>
-        <div className={styles.coinItem__section__desc}>
-          {formatCurrency(price_usd)}
-        </div>
-      </div>
+      <CoinItemSection title="Price (USD)">
+        {formatCurrency(price_usd)}
+      </CoinItemSection>
 
-      <div className={styles.coinItem__section}>
-        <div className={styles.coinItem__section__title}>Volume (24h)</div>
-        <div className={styles.coinItem__section__desc}>
-          {formatCurrency(volume24, true)}
-        </div>
-      </div>
+      <CoinItemSection title="Market Cap">
+        {formatCurrency(market_cap_usd, true)}
+      </CoinItemSection>
 
-      <div className={styles.coinItem__section}>
-        <div className={styles.coinItem__section__title}>Market Cap</div>
-        <div className={styles.coinItem__section__desc}>
-          {formatCurrency(market_cap_usd, true)}
-        </div>
-      </div>
+      <CoinItemSection title="Volume (24h)">
+        {formatCurrency(volume24, true)}
+      </CoinItemSection>
     </div>
   )
 }

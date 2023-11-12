@@ -19,6 +19,10 @@
   color: #515151;
 }
 
+.coinDetail__coin > div {
+  text-align: center;
+}
+
 .coinDetail__items {
   display: flex;
   flex-direction: row;
