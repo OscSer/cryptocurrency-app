@@ -1,5 +1,5 @@
 import styles from './search-bar.module.css'
-import SearchIcon from '../icon/search-icon'
+import { IconListSearch } from '@tabler/icons-react'
 import {
   FormControl,
   InputAdornment,
@@ -16,7 +16,7 @@ export default function SearchBar() {
         label="Search"
         endAdornment={
           <InputAdornment position="end">
-            <SearchIcon />
+            <IconListSearch />
           </InputAdornment>
         }
       />
