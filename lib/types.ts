@@ -27,5 +27,5 @@ export interface CoinsResponse {
 
 export type CoinsData = {
   coins: Coin[]
-  total: number
+  pageCount: number
 }
