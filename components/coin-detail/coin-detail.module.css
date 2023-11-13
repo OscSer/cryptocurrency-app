@@ -2,8 +2,9 @@
 @value primary from colors;
 
 .coinDetail {
-  border: 2px solid primary;
   max-width: 550px;
+  border: 2px solid primary;
+  border-radius: 10px;
   padding: 0 15px 30px 15px;
 }
 
