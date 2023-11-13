@@ -1,4 +1,3 @@
-import { RESULTS_LIMIT } from '@/lib/constants'
 import { CoinsResponse, CoinsData, Coin } from '@/lib/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
@@ -11,9 +10,9 @@ export const coinSlice = createApi({
   endpoints: (builder) => ({
     coins: builder.query<CoinsData, { start: number; limit: number }>({
       query: ({ start, limit }) => `tickers/?start=${start}&limit=${limit}`,
-      transformResponse: (response: CoinsResponse) => ({
+      transformResponse: (response: CoinsResponse, meta, arg) => ({
         coins: response.data,
-        pageCount: Math.ceil(response.info.coins_num / RESULTS_LIMIT),
+        pageCount: Math.ceil(response.info.coins_num / arg.limit),
       }),
     }),
     coinById: builder.query<Coin, { id: string }>({
