@@ -8,7 +8,7 @@ interface Props {
   nameid: string
 }
 
-export default function CoinImage({ width = 40, height = 40, nameid }: Props) {
+export default function CoinImage({ width = 35, height = 35, nameid }: Props) {
   return (
     <Avatar
       sx={{ width, height, backgroundColor: '#fff' }}

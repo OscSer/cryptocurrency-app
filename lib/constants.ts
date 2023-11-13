@@ -3,4 +3,4 @@ export const ROUTES = {
   COIN: '/coin',
 }
 
-export const RESULTS_LIMIT = 6
+export const RESULTS_LIMIT = 10

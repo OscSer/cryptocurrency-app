@@ -6,13 +6,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 5px;
-
-  font-size: 14px;
+  gap: 3px;
 }
 
 .coinItemSection__title {
-  font-size: 16px;
   width: 130px;
   white-space: nowrap;
   overflow: hidden;

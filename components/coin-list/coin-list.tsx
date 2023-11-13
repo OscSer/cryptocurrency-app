@@ -14,7 +14,7 @@ export default function CoinList({ coins = [] }: Props) {
   const onClick = ({ id }: Coin) => router.push(`${ROUTES.COIN}/${id}`)
 
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={1}>
       {coins.map((coin) => (
         <CoinItem key={coin.id} coin={coin} onClick={() => onClick(coin)} />
       ))}
