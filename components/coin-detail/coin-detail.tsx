@@ -12,6 +12,7 @@ interface Props {
 export default function CoinDetail({ coin }: Props) {
   const {
     name,
+    nameid,
     symbol,
     price_usd,
     volume24,
@@ -25,7 +26,7 @@ export default function CoinDetail({ coin }: Props) {
   return (
     <Paper className={styles.coinDetail} variant="outlined">
       <div className={styles.coinDetail__coin}>
-        <CoinImage width={80} height={80} symbol={symbol} />
+        <CoinImage width={80} height={80} nameid={nameid} />
         <div>{`${name} (${symbol})`}</div>
         <div>{formatCurrency(price_usd)}</div>
       </div>
@@ -52,7 +53,7 @@ export default function CoinDetail({ coin }: Props) {
           value={percent_change_24h}
           type="percent"
         />
-        
+
         <CoinDetailItem
           title="Change (7d)"
           value={percent_change_7d}

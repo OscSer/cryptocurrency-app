@@ -5,15 +5,14 @@ import { IconFaceIdError } from '@tabler/icons-react'
 interface Props {
   width?: number
   height?: number
-  symbol: string
+  nameid: string
 }
 
-export default function CoinImage({ width = 40, height = 40, symbol }: Props) {
+export default function CoinImage({ width = 40, height = 40, nameid }: Props) {
   return (
     <Avatar
       sx={{ width, height, backgroundColor: '#fff' }}
-      alt={symbol}
-      src={`https://assets.coincap.io/assets/icons/${symbol.toLowerCase()}@2x.png`}
+      src={`https://c1.coinlore.com/img/50x50/${nameid}.png`}
     >
       <IconFaceIdError size={width} color={colors.faint} />
     </Avatar>

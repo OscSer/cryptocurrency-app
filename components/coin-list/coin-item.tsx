@@ -10,12 +10,12 @@ interface Props {
 }
 
 export default function CoinItem({ coin, onClick }: Props) {
-  const { name, symbol, price_usd, market_cap_usd, volume24 } = coin
+  const { name, nameid, symbol, price_usd, market_cap_usd, volume24 } = coin
 
   return (
     <div className={styles.coinItem} onClick={onClick}>
       <CoinItemSection>
-        <CoinImage symbol={symbol} />
+        <CoinImage nameid={nameid} />
       </CoinItemSection>
 
       <CoinItemSection title={name}>{symbol}</CoinItemSection>
