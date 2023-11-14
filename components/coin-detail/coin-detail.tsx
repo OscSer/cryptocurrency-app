@@ -26,7 +26,7 @@ export default function CoinDetail({ coin }: Props) {
   return (
     <Paper className={styles.coinDetail} variant="outlined">
       <div className={styles.coinDetail__coin}>
-        <CoinImage width={80} height={80} nameid={nameid} />
+        <CoinImage width={60} height={60} nameid={nameid} />
         <div>{`${name} (${symbol})`}</div>
         <div>{formatCurrency(price_usd)}</div>
       </div>
