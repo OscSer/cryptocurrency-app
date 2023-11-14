@@ -5,3 +5,8 @@
   align-items: center;
   gap: 20px;
 }
+
+.home li > button {
+  min-width: 30px;
+  height: 30px;
+}
