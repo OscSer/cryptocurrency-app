@@ -7,7 +7,7 @@ interface Props {
 
 export default function CoinItemSection({ title, children }: Props) {
   return (
-    <div className={styles.coinItemSection}>
+    <div className={styles.coinItemSection} data-testid="coin-item-section">
       {title && <div className={styles.coinItemSection__title}>{title}</div>}
       <div className={styles.coinItemSection__value}>{children}</div>
     </div>

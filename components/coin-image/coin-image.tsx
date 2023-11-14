@@ -12,6 +12,7 @@ export default function CoinImage({ width = 35, height = 35, nameid }: Props) {
   return (
     <Avatar
       sx={{ width, height, backgroundColor: '#fff' }}
+      alt={nameid}
       src={`https://c1.coinlore.com/img/50x50/${nameid}.png`}
     >
       <IconFaceIdError size={width} color={colors.faint} />

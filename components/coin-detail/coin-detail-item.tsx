@@ -41,7 +41,7 @@ export default function CoinDetailItem({ title, value, type }: Props) {
   }
 
   return (
-    <div className={styles.coinDetailItem}>
+    <div className={styles.coinDetailItem} data-testid="detail-item">
       <div className={styles.coinDetailItem__title}>{title}</div>
       {getValue()}
     </div>

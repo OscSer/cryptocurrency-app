@@ -35,6 +35,7 @@ export default function SearchBar({ onSearch }: Props) {
     <FormControl className={styles.searchBar} variant="outlined">
       <InputLabel htmlFor="search-bar">Search</InputLabel>
       <OutlinedInput
+        data-testid="search-bar"
         id="search-bar"
         label="Search"
         autoComplete="off"

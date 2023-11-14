@@ -3,7 +3,7 @@ import { CircularProgress } from '@mui/material'
 
 export default function Loading() {
   return (
-    <div className={styles.loading}>
+    <div className={styles.loading} data-testid="loading">
       <CircularProgress />
     </div>
   )
