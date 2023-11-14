@@ -1,9 +1,6 @@
-import { act, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Coin } from '@/lib/types'
-import userEvent from '@testing-library/user-event'
 import CoinList from '@/components/coin-list/coin-list'
-import { ROUTES } from '@/lib/constants'
-import { useRouter } from 'next/navigation'
 
 describe('CoinItem', () => {
   const coins: Coin[] = []

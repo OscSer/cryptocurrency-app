@@ -1,10 +1,10 @@
 import SearchBar from '@/components/search-bar/search-bar'
 import { useCoinsQuery } from '@/lib/redux/features/coinSlice'
 import { CoinsData } from '@/lib/types'
-import { act, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
-jest.mock('../lib/redux/features/coinSlice', () => {
+jest.mock('../../lib/redux/features/coinSlice', () => {
   return {
     useCoinsQuery: jest.fn(),
   }
